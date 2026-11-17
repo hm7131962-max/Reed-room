@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#08090d">
+  <title>Multi-Bank Control System — Red Room</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<div class="app-shell">
+  <main class="main-area">
+    <header class="topbar">
+      <div class="brand"><div class="brand-mark">MB<span>×</span></div><div><strong>RED ROOM / MULTI-BANK</strong><small>CONTROL INTERFACE <b>V3.0</b></small></div></div>
+      <div class="top-actions">
+        <div class="mode-switch" role="group" aria-label="وضع العرض">
+          <button class="mode-btn active" data-mode="global">كل البنوك</button>
+          <button class="mode-btn" data-mode="bank">بنك محدد</button>
+        </div>
+        <button class="icon-btn" id="themeBtn" title="تبديل المظهر">◐</button>
+        <div class="profile-chip"><div class="profile-avatar">R</div><div><b>المشغّل</b><small>LOCAL OPERATOR</small></div></div>
+      </div>
+    </header>
+
+    <section class="hero-banner">
+      <div class="hero-copy"><div class="eyebrow"><span class="pulse"></span> RESTRICTED WORKSPACE / LOCAL MODE</div><h1>THE <span>RED ROOM</span></h1><p>واجهة تحكم متعددة البنوك — مساحة تجريبية محلية مستقلة.</p></div>
+      <div class="hero-mark">MB<span>×</span></div>
+      <div class="hero-code">SYS // 07<br>ACCESS : LOCAL<br>BUILD : 3.0</div>
+    </section>
+    <nav class="horizontal-nav" aria-label="التنقل الرئيسي">
+      <a href="#banks" data-page="banks" class="nav-link active"><i>▤</i><span>إدارة البنوك</span></a>
+      <a href="#accounts" data-page="accounts" class="nav-link"><i>♙</i><span>حسابات البنك</span></a>
+      <a href="#branches" data-page="branches" class="nav-link"><i>⌖</i><span>إدارة الفروع</span></a>
+      <a href="#operations" data-page="operations" class="nav-link"><i>↻</i><span>سجل العمليات</span></a>
+      <a href="#settings" data-page="settings" class="nav-link"><i>⚙</i><span>السمات والإعدادات</span></a>
+      <div class="nav-spacer"></div><div class="nav-status"><span></span> SYSTEM READY</div>
+    </nav>
+
+    <section class="workspace">
+      <div class="page-heading">
+        <div><div class="eyebrow"><span class="pulse"></span> CONTROL CENTER <span id="headingMode">GLOBAL VIEW</span></div>
+          <h1 id="pageTitle">إدارة <span>البنوك</span></h1>
+          <p id="pageDescription">اختر بنكاً لفتح مساحته وإدارة سجلاته التجريبية.</p>
+        </div>
+        <div class="heading-actions">
+          <label class="bank-select-wrap"><span>البنك الحالي</span><select id="bankSelect" aria-label="اختيار البنك"></select></label>
+          <button class="btn btn-primary" id="quickSettings">⚙ السمات</button>
+        </div>
+      </div>
+      <div id="pageContent" class="page-content" aria-live="polite"></div>
+      <footer class="footer"><span>© 2026 Multi-Bank Control System</span><span>واجهة تجريبية • لا تتصل بأي نظام مصرفي حقيقي</span></footer>
+    </section>
+  </main>
+</div>
+
+<div class="toast" id="toast"></div>
+<div class="modal-backdrop" id="modalBackdrop">
+  <div class="modal" id="modal">
+    <button class="modal-close" id="modalClose">×</button>
+    <div id="modalContent"></div>
+  </div>
+</div>
+<script src="js/app.js"></script>
+</body>
+</html>
